@@ -2,11 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Add this line
+  mode: 'development',
   entry: './index.web.js',
   output: {
     path: path.resolve(__dirname, 'web-build'),
     filename: 'bundle.web.js',
+    publicPath: '/rn-memory-leak-investigation/',
   },
   resolve: {
     alias: {
