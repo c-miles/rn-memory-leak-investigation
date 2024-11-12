@@ -8,13 +8,17 @@ export default function HomeScreen() {
   const animation = React.useRef(new Animated.Value(0)).current;
 
   const startAnimation = () => {
-    Animated.timing(animation, {
-      toValue: 1,
-      duration: 500,
-      useNativeDriver: true,
-    }).start(() => {
-      animation.setValue(0);
-    });
+    for (let i = 0; i < 10000; i++) {
+      const animated = Animated.timing(animation, {
+        toValue: 1,
+        duration: 500,
+        useNativeDriver: true,
+      });
+
+      animated.start(() => {
+        animation.setValue(0);
+      });
+    }
   };
 
   const animatedStyle = {
